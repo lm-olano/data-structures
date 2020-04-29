@@ -18,4 +18,15 @@ class Node {
 
 };
 
+class LinkedList {
+    private:
+        Node* head;
+
+    public:
+        LinkedList(int value = 0);
+
+        Node* get_head_node() {return head;}
+
+};
+
 #endif
