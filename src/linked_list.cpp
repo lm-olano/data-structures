@@ -1,5 +1,7 @@
 #include "linked_list.hpp"
 
+#include <iostream>
+
 // Class constructors
 Node::Node(int value, Node* next) {
 
@@ -17,6 +19,8 @@ void LinkedList::insert_beginning(int new_value) {
     
     Node* new_node = new Node(new_value);
 
+    std::cout << "Adding node with value " << std::to_string(new_value) << " at " << new_node << std::endl;
+
     new_node->set_next(head);
 
     head = new_node;
@@ -33,6 +37,8 @@ void LinkedList::remove_node(int value_to_remove) {
 
     if (prev_node != nullptr) {
         rem_node = (*prev_node).get_next();
+
+        std::cout << "Removing node with value " << std::to_string(value_to_remove) << " at " << rem_node << std::endl;
 
         (*prev_node).set_next((*rem_node).get_next());
 
@@ -74,3 +80,17 @@ std::string LinkedList::stringify() {
     }
     return list_string;
 }
+
+void LinkedList::remove_all() {
+    Node* current_node = head;
+    Node* temp;
+    
+    while (current_node != nullptr) {
+        temp = current_node;
+        current_node = (*current_node).get_next();
+        std::cout << "Removing node with value " << std::to_string((*temp).get_value()) << " at " << temp << std::endl;
+        delete temp;
+    }
+
+    head = nullptr;
+};

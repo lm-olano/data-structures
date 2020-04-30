@@ -38,7 +38,7 @@ class LinkedList {
         
         std::string stringify();
 
-
+        void remove_all();
 };
 
 #endif
