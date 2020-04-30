@@ -63,6 +63,14 @@ Node* LinkedList::search_node(int value) {
 }
 
 std::string LinkedList::stringify() {
+    Node* current_node = head;
+    std::string list_string = "";
 
+    while (current_node != nullptr) {
+        list_string += std::to_string((*current_node).get_value());
+        list_string += " ";
 
+        current_node = (*current_node).get_next();
+    }
+    return list_string;
 }
