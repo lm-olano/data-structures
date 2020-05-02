@@ -27,6 +27,30 @@ void LinkedList::insert_beginning(int new_value) {
 
 }
 
+void LinkedList::insert(int new_value, int previous_value) {
+
+    Node* previous_node;
+    Node* next_node;
+
+    previous_node = search_node(previous_value);
+
+    if (previous_node != nullptr) {
+
+        Node* new_node = new Node(new_value);
+
+        previous_node = (*previous_node).get_next();
+        
+        next_node = (*previous_node).get_next();
+        (*previous_node).set_next(new_node);
+        (*new_node).set_next(next_node);
+    }
+    else {
+        std::cout << "Value " << previous_value << " is not in list." << std::endl;
+    }
+
+
+}
+
 void LinkedList::remove_node(int value_to_remove) {
 
     Node* prev_node;

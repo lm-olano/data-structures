@@ -32,6 +32,7 @@ class LinkedList {
         Node* get_tail_node() {return tail;}
 
         void insert_beginning(int new_value);
+        void insert(int new_value, int previous_value);
         void remove_node(int value_to_delete);
 
         Node* search_node(int value);
