@@ -9,6 +9,9 @@ class Stack {
     public:
     Stack(int max_size=1000);
 
+    bool has_space();
+    bool is_empty();
+
     Node* get_top_item() {return top_item;}
 
     int peek();
