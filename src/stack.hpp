@@ -2,20 +2,20 @@
 
 class Stack {
     private:
-    Node* top_item;
-    int size;
-    int _max_size;
+        Node* top_item;
+        int size;
+        int _max_size;
 
     public:
-    Stack(int max_size=1000);
+        Stack(int max_size=1000);
 
-    bool has_space();
-    bool is_empty();
+        bool has_space();
+        bool is_empty();
 
-    Node* get_top_item() {return top_item;}
+        Node* get_top_item() {return top_item;}
 
-    int peek();
-    int pop();
-    void push(int new_value);
+        int peek();
+        int pop();
+        void push(int new_value);
 
 };
