@@ -7,7 +7,10 @@ class Stack {
     public:
     Stack();
 
+    Node* get_top_item() {return top_item;}
+
     int peek();
+    int pop();
     void push(int new_value);
 
 };
