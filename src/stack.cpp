@@ -2,9 +2,11 @@
 
 #include <iostream>
 
-Stack::Stack() {
+Stack::Stack(int max_size) {
 
     top_item = nullptr;
+    size = 0;
+    _max_size = max_size; 
 }
 
 
@@ -23,6 +25,8 @@ int Stack::pop() {
         top_item = (*top_item).get_next();
 
         delete temp;
+        size--;
+
         return value;   
     }
     else {
@@ -39,5 +43,7 @@ void Stack::push(int new_value) {
     (*new_node).set_next(top_item);
 
     top_item = new_node;
+
+    size++;
 }
 

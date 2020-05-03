@@ -3,9 +3,11 @@
 class Stack {
     private:
     Node* top_item;
+    int size;
+    int _max_size;
 
     public:
-    Stack();
+    Stack(int max_size=1000);
 
     Node* get_top_item() {return top_item;}
 
